@@ -1,0 +1,103 @@
+<section id="contents">
+    <h1 class="cont-title">배너 정보</h1>
+    <div class="cont-wrap">
+        <form method="POST" id="frm-data" name="frm-data">
+            <div class="rhead01-wrap">
+                <div class="h2">기본 정보</div>
+                <table>
+                    <colgroup>
+                        <col class="w130" />
+                        <col />
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th scope="row">배너 제목</th>
+                            <td>
+                                <input
+                                    type="text"
+                                    name="bn_title"
+                                    placeholder="여름맞이 이벤트"
+                                    required
+                                />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">배너 이미지</th>
+                            <td>
+                                <input
+                                    type="text"
+                                    name="bn_img_src"
+                                    placeholder="https://killdeal.co.kr/image/simg1.png"
+                                />
+                                <img
+                                    style="display: block"
+                                    class="dn pre-view"
+                                    width="300"
+                                />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">배너 링크</th>
+                            <td>
+                                <input
+                                    type="text"
+                                    name="bn_link"
+                                    placeholder="https://killdeal.co.kr/event/2"
+                                />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">배너 타겟</th>
+                            <td>
+                                <select name="bn_target">
+                                    <option>_blank1</option>
+                                    <option>_blank</option>
+                                    <option>_blank3</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">배너 시작일시</th>
+                            <td>
+                                <input type="date" name="bn_beg_date" />
+                                <input type="time" name="bn_beg_time" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">배너 종료일시</th>
+                            <td>
+                                <input type="date" name="bn_end_date" />
+                                <input type="time" name="bn_end_time" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">배너 노출 여부</th>
+                            <td>
+                                <select name="bn_use_yn">
+                                    <option value="y">노출</option>
+                                    <option value="n">비노출</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="confirm-wrap">
+                    <input
+                        type="submit"
+                        id="frm-submit"
+                        value="등록"
+                        class="btn-large btn-theme"
+                        accesskey="s"
+                    />
+                    <input
+                        type="button"
+                        value="닫기"
+                        class="btn-large btn-white"
+                        accesskey="s"
+                        onClick="window.close()"
+                    />
+                </div>
+            </div>
+        </form>
+    </div>
+</section>

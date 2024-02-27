@@ -1,0 +1,296 @@
+<section id="contents">
+    <h1 class="cont-title">예약 정보</h1>
+    <div class="cont-wrap">
+        <form method="POST" id="frm-data" name="frm-data">
+            <div class="rhead01-wrap">
+                <div class="h2">기본 정보</div>
+                <table>
+                    <colgroup>
+                        <col class="w130" />
+                        <col />
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th scope="row">예약 고유 번호</th>
+                            <td>
+                                <input
+                                    type="text"
+                                    name="reservation_idx"
+                                    size="30"
+                                    disabled
+                                />
+                                <p class="info">
+                                    ※ 고유 번호로서, 자동으로 설정됩니다.
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">예약 코드</th>
+                            <td>
+                                <input
+                                    type="text"
+                                    name="reservation_code"
+                                    size="30"
+                                    disabled
+                                />
+                                <p class="info">
+                                    ※ 고유 번호로서, 자동으로 설정됩니다.
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">매장 번호</th>
+                            <td>
+                                <input
+                                    type="text"
+                                    name="reservation_store_idx"
+                                    size="30"
+                                    class="unchangeable-data"
+                                    required
+                                />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">매장 이름</th>
+                            <td>
+                                <input
+                                    type="text"
+                                    name="store_name"
+                                    size="30"
+                                    disabled
+                                />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">매장 전화번호</th>
+                            <td>
+                                <input
+                                    type="text"
+                                    name="store_tel"
+                                    size="30"
+                                    disabled
+                                />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">방 번호</th>
+                            <td>
+                                <input
+                                    type="text"
+                                    name="reservation_room_idx"
+                                    size="30"
+                                    class="unchangeable-data"
+                                    required
+                                />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">쿠폰 번호</th>
+                            <td>
+                                <input
+                                    type="text"
+                                    name="reservation_voucher_idx"
+                                    size="30"
+                                    class="unchangeable-data"
+                                />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">예약 상태</th>
+                            <td>
+                                <label>
+                                    <input
+                                        type="radio"
+                                        name="reservation_stt"
+                                        value="1"
+                                    />
+                                    대기
+                                </label>
+                                <label>
+                                    <input
+                                        type="radio"
+                                        name="reservation_stt"
+                                        value="2"
+                                    />
+                                    승인
+                                </label>
+                                <label>
+                                    <input
+                                        type="radio"
+                                        name="reservation_stt"
+                                        value="3"
+                                    />
+                                    취소
+                                </label>
+                                <label>
+                                    <input
+                                        type="radio"
+                                        name="reservation_stt"
+                                        value="4"
+                                    />
+                                    노쇼
+                                </label>
+                                <label>
+                                    <input
+                                        type="radio"
+                                        name="reservation_stt"
+                                        value="5"
+                                    />
+                                    입장
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">취소 사유</th>
+                            <td>
+                                <input
+                                    type="text"
+                                    name="reservation_cancel_reason"
+                                    size="30"
+                                    disabled
+                                />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">회원 고유 번호</th>
+                            <td>
+                                <input
+                                    type="text"
+                                    name="reservation_mb_idx"
+                                    size="20"
+                                    class="unchangeable-data"
+                                    required
+                                />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">예약자 이름</th>
+                            <td>
+                                <input
+                                    type="text"
+                                    name="reservation_user_name"
+                                    size="20"
+                                />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">예약자 전화번호</th>
+                            <td>
+                                <input
+                                    type="text"
+                                    name="reservation_user_cellphone"
+                                    size="30"
+                                />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">예약 일자</th>
+                            <td>
+                                <input
+                                    type="date"
+                                    name="reservation_date"
+                                    size="30"
+                                />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">예약 시간</th>
+                            <td>
+                                <input
+                                    type="text"
+                                    name="reservation_time"
+                                    size="30"
+                                />
+                                <p class="para">
+                                    ※ 30분 = 1, 예를 들어 10:00 인 경우, 20으로
+                                    표시한다.
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">예약 타임</th>
+                            <td>
+                                <input
+                                    type="text"
+                                    name="reservation_period"
+                                    size="30"
+                                />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">등록 일시</th>
+                            <td>
+                                <input
+                                    type="text"
+                                    name="reservation_reg_dt"
+                                    size="30"
+                                    disabled
+                                />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">확정 일시</th>
+                            <td>
+                                <input
+                                    type="text"
+                                    name="reservation_confirm_dt"
+                                    size="30"
+                                    disabled
+                                />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">취소 일시</th>
+                            <td>
+                                <input
+                                    type="text"
+                                    name="reservation_cancel_dt"
+                                    size="30"
+                                    disabled
+                                />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">입장 일시</th>
+                            <td>
+                                <input
+                                    type="text"
+                                    name="reservation_enter_dt"
+                                    size="30"
+                                    disabled
+                                />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">후기 작성 여부</th>
+                            <td>
+                                <input
+                                    type="text"
+                                    name="reservation_review_yn"
+                                    size="30"
+                                    disabled
+                                />
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="confirm-wrap">
+                    <input
+                        type="submit"
+                        id="frm-submit"
+                        value="등록"
+                        class="btn-large btn-theme"
+                        accesskey="s"
+                    />
+                    <input
+                        type="button"
+                        value="닫기"
+                        class="btn-large btn-white"
+                        accesskey="s"
+                        onClick="window.close()"
+                    />
+                </div>
+            </div>
+        </form>
+    </div>
+</section>

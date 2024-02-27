@@ -1,0 +1,124 @@
+<section id="contents">
+    <h1 class="cont_title">배너 정보</h1>
+    <div class="cont_wrap">
+        <form
+            action="<?=_URL?>/banner/set/<?=$this->params['ident']?>"
+            method="POST"
+            id="frm_banner_set"
+            name="frm_banner_set"
+            onsubmit="return bannerSet()"
+        >
+            <div class="rhead01_wrap">
+                <div class="h2">기본 정보</div>
+                <table>
+                    <colgroup>
+                        <col class="w130" />
+                        <col />
+                        <col class="w130" />
+                        <col />
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th scope="row">배너 제목</th>
+                            <td>
+                                <input
+                                    type="text"
+                                    name="bn_title"
+                                    id="bn_title"
+                                    required
+                                />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">배너 이미지</th>
+                            <td>
+                                <input
+                                    type="file"
+                                    name="bn_img_src"
+                                    id="bn_img_src"
+                                />
+                                <img class="mart5" width="300" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">배너 링크</th>
+                            <td>
+                                <input
+                                    type="text"
+                                    name="bn_link"
+                                    id="bn_link"
+                                />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">배너 타겟</th>
+                            <td>
+                                <select name="bn_target" id="bn_target">
+                                    <option>_blank1</option>
+                                    <option>_blank</option>
+                                    <option>_blank3</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">배너 시작일시</th>
+                            <td>
+                                <input
+                                    type="hidden"
+                                    name="bn_beg_dt"
+                                    id="bn_beg_dt"
+                                />
+                                <input type="date" id="beg_date" />
+                                <input type="time" id="beg_time" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">배너 종료일시</th>
+                            <td>
+                                <input
+                                    type="hidden"
+                                    name="bn_end_dt"
+                                    id="bn_end_dt"
+                                />
+                                <input type="date" id="end_date" />
+                                <input type="time" id="end_time" />
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="confirm_wrap">
+                    <input
+                        type="submit"
+                        value="수정"
+                        class="btn_large btn_theme"
+                        accesskey="s"
+                    />
+                    <input
+                        type="button"
+                        value="닫기"
+                        class="btn_large btn_white"
+                        accesskey="s"
+                        onClick="window.close()"
+                    />
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+<script>
+    $(function () {
+        loadData(<?=json_encode($this->row)?>);
+    });
+</script>
+<script>
+    function bannerSet() {
+        const begDate = $("#beg_date").val();
+        const begTime = $("#beg_time").val();
+        $("#bn_beg_dt").val(begDate + " " + begTime);
+
+        const endDate = $("#end_date").val();
+        const endTime = $("#end_time").val();
+        $("#bn_end_dt").val(endDate + " " + endTime);
+        //return false;
+    }
+</script>

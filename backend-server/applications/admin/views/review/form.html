@@ -1,0 +1,232 @@
+<section id="contents">
+    <h1 class="cont-title">후기 정보</h1>
+    <div class="cont-wrap">
+        <form method="POST" id="frm-data" name="frm-data">
+            <div class="rhead01-wrap">
+                <div class="h2">기본 정보</div>
+                <table>
+                    <colgroup>
+                        <col class="w130" />
+                        <col />
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th scope="row">후기 번호</th>
+                            <td>
+                                <input
+                                    type="text"
+                                    name="review_idx"
+                                    size="10"
+                                    disabled
+                                />
+                                <p class="info">
+                                    ※ 고유 번호로서, 자동으로 설정됩니다.
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">매장 번호</th>
+                            <td>
+                                <input
+                                    type="text"
+                                    name="review_by_store_idx"
+                                    size="10"
+                                    class="unchangeable-data"
+                                />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">회원 번호</th>
+                            <td>
+                                <input
+                                    type="text"
+                                    name="review_by_mb_idx"
+                                    size="10"
+                                    class="unchangeable-data"
+                                />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">제목</th>
+                            <td>
+                                <input
+                                    type="text"
+                                    name="review_title"
+                                    size="30"
+                                    class="unchangeable-data"
+                                />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">태그</th>
+                            <td>
+                                <input
+                                    type="text"
+                                    name="review_tags"
+                                    size="30"
+                                    class="unchangeable-data"
+                                />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">컨텐츠</th>
+                            <td>
+                                <input
+                                    type="text"
+                                    name="review_content"
+                                    size="30"
+                                    class="unchangeable-data"
+                                />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">이미지1</th>
+                            <td>
+                                <input
+                                    type="file"
+                                    name="review_img1"
+                                    class="unchangeable-data"
+                                />
+                                <img class="pre-view" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">이미지2</th>
+                            <td>
+                                <input
+                                    type="file"
+                                    name="review_img2"
+                                    class="unchangeable-data"
+                                />
+                                <img class="pre-view" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">이미지3</th>
+                            <td>
+                                <input
+                                    type="file"
+                                    name="review_img3"
+                                    class="unchangeable-data"
+                                />
+                                <img class="pre-view" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">별점</th>
+                            <td>
+                                <input
+                                    type="text"
+                                    name="review_rating"
+                                    class="unchangeable-data"
+                                />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">답변 여부</th>
+                            <td>
+                                <label>
+                                    <input
+                                        type="radio"
+                                        name="review_answer_yn"
+                                        class="unchangeable-data"
+                                        value="y"
+                                    />
+                                    답변완료
+                                </label>
+                                <label>
+                                    <input
+                                        type="radio"
+                                        name="review_answer_yn"
+                                        class="unchangeable-data"
+                                        value="n"
+                                    />
+                                    미답변
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">차단 여부</th>
+                            <td>
+                                <label>
+                                    <input
+                                        type="radio"
+                                        name="review_block_yn"
+                                        class="changeable-data"
+                                        value="y"
+                                    />
+                                    차단
+                                </label>
+                                <label>
+                                    <input
+                                        type="radio"
+                                        name="review_block_yn"
+                                        class="changeable-data"
+                                        value="n"
+                                    />
+                                    허용
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">예약 고유 번호</th>
+                            <td>
+                                <input
+                                    type="text"
+                                    name="review_reservation_idx"
+                                    class="unchangeable-data"
+                                />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">답변 일시</th>
+                            <td>
+                                <input
+                                    type="text"
+                                    name="review_answer_dt"
+                                    disabled
+                                />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">등록 일시</th>
+                            <td>
+                                <input
+                                    type="text"
+                                    name="review_answer_dt"
+                                    disabled
+                                />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">수정 일시</th>
+                            <td>
+                                <input
+                                    type="text"
+                                    name="review_answer_dt"
+                                    disabled
+                                />
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="confirm-wrap">
+                    <input
+                        type="submit"
+                        id="frm-submit"
+                        value="등록"
+                        class="btn-large btn-theme"
+                        accesskey="s"
+                    />
+                    <input
+                        type="button"
+                        value="닫기"
+                        class="btn-large btn-white"
+                        accesskey="s"
+                        onClick="window.close()"
+                    />
+                </div>
+            </div>
+        </form>
+    </div>
+</section>

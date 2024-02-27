@@ -1,0 +1,3 @@
+$(function () {
+    setFormData("media", loadData);
+});

@@ -1,0 +1,79 @@
+<div id="contents">
+    <script
+        type="text/javascript"
+        src="https://www.gstatic.com/charts/loader.js"
+    ></script>
+    <div class="marb40">
+        <div class="h2">회원 통계</div>
+        <div class="grid-wrap">
+            <!--
+            <div class="grid-col-4 grid-shadow bg-white pad10">
+                <div class="item_title">오늘 가입자수</div>
+                <div class="grid-wrap">
+                    <div class="grid-col-6 padt80"><span>명</span></div>
+                    <div class="grid-col-6 padt80"><span>2명</span></div>
+                </div>
+            </div>
+            <div class="grid-col-8 grid-shadow bg-white pad10 marl10">
+                <div class="item_title">지난 7일간 가입자수</div>
+                <div class="chart-wrap">
+                    <div id="chart-div"></div>
+                </div>
+            </div>
+            -->
+            <div class="grid-col-12 grid-shadow bg-white pad10">
+                <div class="item_title">지난 7일간 가입자수</div>
+                <div class="chart-wrap">
+                    <div id="chart-div"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        google.charts.load("current", { packages: ["corechart", "line"] });
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+            /*
+            var js_array = [
+                { dc_dt: "2023-09-06", mb_cnt: 1 },
+                { dc_dt: "2023-09-07", mb_cnt: 0 },
+                { dc_dt: "2023-09-08", mb_cnt: 0 },
+            ];
+            */
+            var js_array = <?=$this->row?>;
+            var data = new google.visualization.DataTable();
+            data.addColumn("string", "일");
+            data.addColumn("number", "가입자수");
+
+            var arr = new Array();
+            for (var i = 0; i < js_array.length; i++) {
+                tmp = Object.values(js_array[i]);
+                tmp[0] = tmp[0].substr(5, 9);
+                arr[i] = tmp;
+            }
+
+            data.addRows(arr);
+            var options = {
+                series: {
+                    0: { color: "<?=_COLOR?>", lineWidth: 6 },
+                },
+                chartArea: { width: "100%" },
+                axisTitlesPosition: "none",
+                hAxis: {
+                    textStyle: {
+                        fontSize: 10,
+                    },
+                },
+            };
+            var chart = new google.visualization.LineChart(
+                document.getElementById("chart-div")
+            );
+            chart.draw(data, options);
+        }
+
+        $(window).resize(function () {
+            drawChart();
+        });
+    </script>
+</div>

@@ -1,0 +1,73 @@
+<section id="contents">
+    <h1 class="cont-title">탈퇴 회원 목록</h1>
+    <div class="cont-wrap">
+        <form action="#">
+            <div class="list-wrap">
+                <div class="rect-wrap">
+                    <span class="cnt-wrap">
+                        검색된 회원 :
+                        <b class="cnt" id="cnt"></b> 명
+                    </span>
+                    <span class="right-wrap">
+                        <button
+                            type="button"
+                            class="btn-excel"
+                            id="excel-download"
+                        >
+                            엑셀저장
+                        </button>
+                    </span>
+                </div>
+                <div id="member-leave-list"></div>
+            </div>
+        </form>
+    </div>
+</section>
+<script>
+    var list = <?=json_encode($this->row)?>;
+    var request = <?=json_encode($this->request)?>;
+</script>
+<script>
+    $(function () {
+        loadData(request);
+    });
+</script>
+<script>
+    $(function () {
+        $("#cnt").html(list.length);
+        var columns = [
+            {
+                title: "번호",
+                field: "mb_leave_idx",
+                editor: false,
+                //headerHozAlign: "center",
+                //hozAlign: "center",
+                cellClick: function (e, cell) {
+                    winOpen(
+                        "<?=_URL?>/member/form/" + cell._cell.value,
+                        "memberInfo"
+                    );
+                },
+                width: 70,
+            },
+            {
+                title: "아이디",
+                field: "mb_leave_mb_id",
+                editor: false,
+            },
+            {
+                title: "사유",
+                field: "mb_leave_reason",
+                editor: false,
+            },
+            {
+                title: "탈퇴 일시",
+                field: "mb_leave_dt",
+                editor: false,
+            },
+        ];
+        setTable("member-list", columns, list, [
+            { column: "mb_leave_dt", dir: "desc" },
+        ]);
+    });
+</script>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <?php require_once _APPLICATIONS . "/views/head.html"; ?>
+    <body>
+        <div id="container">
+            <header id="hd">
+                <div id="hd-wrap">
+                    <div id="logo">
+                        <a href="<?=_URL?>/main">ADMINISTRATOR</a>
+                    </div>
+                    <div id="tnb">
+                        <ul>
+                            <li><a href="<?=_URL?>/main">홈</a></li>
+                            <li id="tnb-logout">
+                                <a href="<?=_URL?>/auth/logout">로그아웃</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </header>
+            <aside id="aside">
+                <div class="snb-inner">
+                    <?php  foreach($this->tab as $tabName=>$tabList){ ?>
+                    <div class="tab">
+                        <div class="subj">
+                            <?=$tabName?><span class="braket"></span>
+                        </div>
+                        <div class="tab-menu dn">
+                            <?php foreach($tabList as $value){ ?>
+                            <?php   if(!$value['visible']){ continue; } ?>
+                            <div class="<?='/'.$_REQUEST['url'] == $value['url']?'active':''?>">
+                                <a href="<?=_URL?><?=$value['url']?>"><?=$value['title']?></a
+                                >
+                            </div>
+                            <?php } ?>
+                        </div>
+                    </div>
+                    <?php } ?>
+                </div>
+                <script>
+                    $(function () {
+                        /*
+                        const subj = $(".tab-menu > .active").parent().parent().children('.subj');
+                        subj.children(".braket").addClass("active");
+                        subj.next(".tab-menu").slideToggle(200);
+                        */
+                        $(".subj").click(function () {
+                            if (
+                                $(this).children(".braket").hasClass("active")
+                            ) {
+                                $(this)
+                                    .children(".braket")
+                                    .removeClass("active");
+                            } else {
+                                $(this).children(".braket").addClass("active");
+                            }
+                            $(this).next(".tab-menu").slideToggle(200);
+                        });
+                    });
+                </script>
+            </aside>
+            <div id="sidelayout">
+                <?php include_once $this->contents . ".html"; ?>
+            </div>
+        </div>
+        <?php require_once _APPLICATIONS . "/views/footer.html"; ?>
+    </body>
+</html>

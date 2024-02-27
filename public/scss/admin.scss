@@ -1,0 +1,40 @@
+@charset "utf-8";
+
+$para-fs: 13px;
+$sub-tit-fs: 14px;
+$main-tit-fs: 15px;
+$ft-fs: 13px;
+
+$color-light-red: #f7e3e1;
+$color-light-red-hover: #efc8c4;
+$color-red: #e94235;
+$color-red-hover: #cd0c0c;
+
+$color-light-gray: #fcfcfc;
+$color-light-gray-hover: #f7f7f7;
+$color-gray: #eee;
+$color-gray-hover: #ddd;
+
+$color-dark-gray: #787878;
+$color-dark-gray-hover: #555;
+
+$color-light-blue: #f8fbfd;
+$color-light-blue-hover: #c0d8e5;
+$color-blue: #006daa;
+$color-blue-hover: #014164;
+
+$color-light-yellow: #fefcec;
+$color-light-yellow-hover: #fefcec;
+$color-yellow: #f9de05;
+$color-yellow-hover: #fefcec;
+
+$color-black: #333;
+$color-black-hover: #111;
+
+$color-theme: #f33562;
+$color-theme-hover: #f33562;
+$color-theme-bg: #fff;
+
+$aside-top: 45px;
+
+@import "basic.scss";

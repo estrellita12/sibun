@@ -1,0 +1,184 @@
+<section id="contents">
+    <h1 class="cont-title">이벤트 목록</h1>
+    <div class="cont-wrap">
+        <form action="" method="GET" id="frm-search" name="frm-search">
+            <div class="search-wrap">
+                <table>
+                    <colgroup>
+                        <col class="w140" />
+                        <col />
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th scope="row">
+                                <span class="tooltip"
+                                    >검색어<span class="tooltiptext"
+                                        >검색어 입력시 포함 검색, (쉼표)를
+                                        입력시 구분검색</span
+                                    >
+                                </span>
+                            </th>
+                            <td>
+                                <select name="srch" id="srch" class="w130">
+                                    <option value="event_title">
+                                        이벤트 제목
+                                    </option>
+                                </select>
+                                <input
+                                    type="text"
+                                    name="kwd"
+                                    id="kwd"
+                                    size="30"
+                                />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">기간검색</th>
+                            <td>
+                                <div>
+                                    <select name="term" class="w130" id="term">
+                                        <option value="event_beg_dt">
+                                            시작일
+                                        </option>
+                                        <option value="event_end_dt">
+                                            종료일
+                                        </option>
+                                    </select>
+                                    <input
+                                        type="date"
+                                        name="beg"
+                                        id="beg"
+                                        size="6"
+                                    />
+                                    <input
+                                        type="date"
+                                        name="end"
+                                        id="end"
+                                        size="6"
+                                    />
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="confirm-wrap">
+                    <input
+                        type="submit"
+                        value="검색"
+                        id="fsearch"
+                        class="btn-medium btn-theme"
+                    />
+                    <input
+                        type="reset"
+                        value="초기화"
+                        id="freset"
+                        class="btn-medium btn-white"
+                    />
+                </div>
+            </div>
+        </form>
+        <form action="#" method="post">
+            <div class="list-wrap">
+                <div class="rect-wrap">
+                    <span class="cnt-wrap">
+                        검색된 이벤트 :
+                        <b class="cnt" id="cnt"></b> 개
+                    </span>
+                    <span class="right-wrap">
+                        <button
+                            type="button"
+                            class="btn-excel"
+                            id="excel-download"
+                        >
+                            엑셀저장
+                        </button>
+                    </span>
+                </div>
+                <div class="btn-wrap">
+                    <button
+                        onClick="winOpen('<?=_URL?>/event/form')"
+                        class="btn-small btn-white"
+                    >
+                        + 이벤트 추가
+                    </button>
+                </div>
+                <div id="event-list"></div>
+            </div>
+        </form>
+    </div>
+</section>
+<script>
+    var list = <?=json_encode($this->row)?>;
+    var request = <?=json_encode($this->request)?>;
+</script>
+<script>
+    $(function () {
+        loadData(request);
+    });
+</script>
+<script>
+    $(function () {
+        $("#cnt").html(list.length);
+        var columns = [
+            {
+                title: "번호",
+                field: "event_idx",
+                editor: false,
+                cellClick: function (e, cell) {
+                    winOpen(
+                        "<?=_URL?>/event/form/" + cell._cell.value,
+                        "eventInfo"
+                    );
+                },
+                width: 70,
+            },
+            {
+                title: "순서",
+                field: "event_orderby",
+                editor: false,
+                width: 70,
+                visible: false,
+            },
+            {
+                title: "제목",
+                field: "event_title",
+                editor: false,
+            },
+            {
+                title: "시작일시",
+                field: "event_beg_dt",
+                editor: false,
+                formatter: function (cell, formatterParams, onRendered) {
+                    return checkDate(cell.getValue());
+                },
+            },
+            {
+                title: "종료일시",
+                field: "event_end_dt",
+                editor: false,
+                formatter: function (cell, formatterParams, onRendered) {
+                    return checkDate(cell.getValue());
+                },
+            },
+            {
+                title: "사용여부",
+                field: "event_use_yn",
+                editor: false,
+                width: 100,
+            },
+            {
+                title: "등록일시",
+                field: "event_reg_dt",
+                editor: false,
+            },
+            {
+                title: "수정일시",
+                field: "event_update_dt",
+                editor: false,
+            },
+        ];
+        setTable("event-list", columns, list, [
+            { column: "event_orderby", dir: "asc" },
+        ]);
+    });
+</script>

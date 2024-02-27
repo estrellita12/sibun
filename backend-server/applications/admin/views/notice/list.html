@@ -1,0 +1,184 @@
+<section id="contents">
+    <h1 class="cont_title">공지 목록</h1>
+    <div class="cont_wrap">
+        <form action="" method="GET" id="frmSearch" name="frmSearch">
+            <div class="search_wrap">
+                <table>
+                    <colgroup>
+                        <col class="w140" />
+                        <col />
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th scope="row">
+                                <span class="tooltip"
+                                    >검색어<span class="tooltiptext"
+                                        >검색어 입력시 포함 검색, (쉼표)를
+                                        입력시 구분검색</span
+                                    >
+                                </span>
+                            </th>
+                            <td>
+                                <select name="srch" id="srch" class="w130">
+                                    <option value="notice_title">제목</option>
+                                </select>
+                                <input
+                                    type="text"
+                                    name="kwd"
+                                    id="kwd"
+                                    size="30"
+                                />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">기간검색</th>
+                            <td>
+                                <div>
+                                    <select name="term" class="w130" id="term">
+                                        <option value="notice_reg_dt">
+                                            등록일
+                                        </option>
+                                    </select>
+                                    <input
+                                        type="date"
+                                        name="beg"
+                                        id="beg"
+                                        size="6"
+                                    />
+                                    <input
+                                        type="date"
+                                        name="end"
+                                        id="end"
+                                        size="6"
+                                    />
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="confirm_wrap">
+                    <input
+                        type="submit"
+                        value="검색"
+                        id="fsearch"
+                        class="btn_medium btn_theme"
+                    />
+                    <input
+                        type="reset"
+                        value="초기화"
+                        id="freset"
+                        class="btn_medium btn_white"
+                    />
+                </div>
+            </div>
+        </form>
+        <form action="#" method="post">
+            <div class="list_wrap">
+                <div class="rect_wrap">
+                    <span class="cnt_wrap">
+                        검색된 공지사항 :
+                        <b class="cnt" id="cnt"></b> 명
+                    </span>
+                    <span class="right_wrap">
+                        <button
+                            type="button"
+                            class="btn_excel"
+                            id="excel_download"
+                        >
+                            엑셀저장
+                        </button>
+                    </span>
+                </div>
+                <div class="btn_wrap">
+                    <a href="<?=_URL?>/notice/form" class="btn_small btn_white"
+                        >+ 공지사항 추가</a
+                    >
+                </div>
+                <div id="example-table"></div>
+            </div>
+        </form>
+    </div>
+</section>
+<script>
+    $(function () {
+        var data = row && row;
+        $("#cnt").html(data.length);
+        var columns = [
+            {
+                title: "번호",
+                field: "notice_idx",
+                editor: false,
+                cellClick: function (e, cell) {
+                    winOpen(
+                        url + "/notice/info/" + cell._cell.value,
+                        "noticeInfo",
+                        1200
+                    );
+                },
+                sorter: "number",
+                width: 70,
+            },
+            {
+                title: "순서",
+                field: "notice_orderby",
+                editor: false,
+                sorter: "number",
+                visible: false,
+                width: 100,
+            },
+            {
+                title: "회원",
+                field: "notice_target_member",
+                editor: false,
+                formatter: "lookup",
+                formatterParams: {
+                    y: "노출",
+                    n: "비노출",
+                },
+                width: 100,
+            },
+            {
+                title: "가맹점",
+                field: "notice_target_partner",
+                editor: false,
+                formatter: "lookup",
+                formatterParams: {
+                    y: "노출",
+                    n: "비노출",
+                },
+                width: 100,
+            },
+            {
+                title: "제목",
+                field: "notice_title",
+                editor: false,
+            },
+            {
+                title: "상단 고정",
+                field: "notice_top_fixed",
+                editor: false,
+                formatter: "lookup",
+                formatterParams: {
+                    y: "고정",
+                    n: "",
+                },
+                width: 100,
+            },
+            {
+                title: "조회수",
+                field: "notice_view_cnt",
+                editor: false,
+                width: 100,
+            },
+            {
+                title: "등록일시",
+                field: "notice_reg_dt",
+                editor: false,
+                width: 160,
+            },
+        ];
+        const table = setTable("example-table", columns, data, [
+            { column: "notice_orderby", dir: "asc" },
+        ]);
+    });
+</script>

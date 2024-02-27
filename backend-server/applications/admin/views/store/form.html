@@ -1,0 +1,191 @@
+<section id="contents">
+    <h1 class="cont-title">매장 정보</h1>
+    <div class="cont-wrap">
+        <form method="POST" id="frm-data" name="frm-data">
+            <div class="rhead01-wrap">
+                <div class="h2">기본 정보</div>
+                <table>
+                    <colgroup>
+                        <col class="w130" />
+                        <col />
+                        <col class="w130" />
+                        <col />
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th scope="row">매장 번호</th>
+                            <td>
+                                <input
+                                    type="text"
+                                    name="store_idx"
+                                    size="20"
+                                    disabled
+                                />
+                                <p class="info">
+                                    ※ 매장 고유 번호로서, 자동으로 설정됩니다.
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">가맹점</th>
+                            <td colspan="3">
+                                <input
+                                    type="text"
+                                    size="10"
+                                    name="store_pt_idx"
+                                />
+                                <input
+                                    type="text"
+                                    id="store-name"
+                                    size="10"
+                                    disabled
+                                />
+                                <button class="btn-small btn-white">
+                                    검색
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">카테고리</th>
+                            <td>
+                                <input
+                                    type="text"
+                                    name="store_ctg_idx"
+                                    size="10"
+                                />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">이름</th>
+                            <td>
+                                <input type="text" name="store_name" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">전화번호</th>
+                            <td>
+                                <input type="text" name="store_tel" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">대표 이미지</th>
+                            <td>
+                                <input type="text" name="store_main_simg" />
+                                <img class="pre-view" width="250" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">우편번호</th>
+                            <td>
+                                <input type="text" name="store_addr_zip" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">주소</th>
+                            <td>
+                                <input type="text" name="store_addr" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">주소 (도/시)</th>
+                            <td>
+                                <input type="text" name="store_addr1" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">주소 (구)</th>
+                            <td>
+                                <input type="text" name="store_addr2" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">주소 (동)</th>
+                            <td>
+                                <input type="text" name="store_addr3" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">경도</th>
+                            <td>
+                                <input type="text" name="store_addr_x" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">위도</th>
+                            <td>
+                                <input type="text" name="store_addr_y" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">영업 시작 시간</th>
+                            <td>
+                                <input type="text" name="store_open_time" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">영업 종료 시간</th>
+                            <td>
+                                <input type="text" name="store_close_time" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">휴무 요일</th>
+                            <td>
+                                <input type="text" name="store_closed_days" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">휴무 공지</th>
+                            <td>
+                                <input type="text" name="store_closed_notice" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">할인권 사용 여부</th>
+                            <td>
+                                <label>
+                                    <input
+                                        type="radio"
+                                        name="store_voucher_use_yn"
+                                        value="y"
+                                    />
+                                    사용
+                                </label>
+                                <label>
+                                    <input
+                                        type="radio"
+                                        name="store_voucher_use_yn"
+                                        value="n"
+                                    />
+                                    미사용
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">편의시설</th>
+                            <td>
+                                <input type="text" name="store_amenities" />
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="confirm-wrap">
+                    <input
+                        type="submit"
+                        id="frm-submit"
+                        value="등록"
+                        class="btn-large btn-theme"
+                        accesskey="s"
+                    />
+                    <input
+                        type="button"
+                        value="닫기"
+                        class="btn-large btn-white"
+                        accesskey="s"
+                        onClick="window.close()"
+                    />
+                </div>
+            </div>
+        </form>
+    </div>
+</section>

@@ -1,0 +1,150 @@
+<section id="contents">
+    <h1 class="cont_title">SMS 발송 기록</h1>
+    <div class="cont_wrap">
+        <form action="" method="GET" id="frmSearch" name="frmSearch">
+            <div class="search_wrap">
+                <table>
+                    <colgroup>
+                        <col class="w140" />
+                        <col />
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th scope="row">
+                                <span class="tooltip"
+                                    >검색어<span class="tooltiptext"
+                                        >검색어 입력시 포함 검색, (쉼표)를
+                                        입력시 구분검색</span
+                                    >
+                                </span>
+                            </th>
+                            <td>
+                                <select name="srch" id="srch" class="w130">
+                                    <option value="sms_hty_receiver">
+                                        전화번호
+                                    </option>
+                                </select>
+                                <input
+                                    type="text"
+                                    name="kwd"
+                                    id="kwd"
+                                    size="30"
+                                />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">기간검색</th>
+                            <td>
+                                <div>
+                                    <select name="term" class="w130" id="term">
+                                        <option value="sms_hty_reg_dt">
+                                            등록일
+                                        </option>
+                                    </select>
+                                    <input
+                                        type="date"
+                                        name="beg"
+                                        id="beg"
+                                        size="6"
+                                    />
+                                    <input
+                                        type="date"
+                                        name="end"
+                                        id="end"
+                                        size="6"
+                                    />
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="confirm_wrap">
+                    <input
+                        type="submit"
+                        value="검색"
+                        id="fsearch"
+                        class="btn_medium btn_theme"
+                    />
+                    <input
+                        type="reset"
+                        value="초기화"
+                        id="freset"
+                        class="btn_medium btn_white"
+                    />
+                </div>
+            </div>
+        </form>
+        <form action="#" method="post">
+            <div class="list_wrap">
+                <div class="rect_wrap">
+                    <span class="cnt_wrap">
+                        검색된 회원 :
+                        <b class="cnt" id="cnt"></b> 명
+                    </span>
+                    <!--
+                    <span class="rpp_wrap">
+                        <select id="rpp">
+                            <?= get_frm_rpp( $_REQUEST['rpp'] );?>
+                        </select>
+                    </span>
+                    -->
+                    <span class="right_wrap">
+                        <a href="<?=_URL?>/member/listExcel?" class="btn_excel"
+                            >엑셀저장</a
+                        >
+                    </span>
+                </div>
+                <div class="btn_wrap">
+                    <a href="<?=_URL?>/member/form" class="btn_small btn_white"
+                        >+ 회원 추가</a
+                    >
+                </div>
+                <div id="example-table"></div>
+            </div>
+        </form>
+    </div>
+</section>
+<script>
+    $(function () {
+        var data = row && row;
+        $("#cnt").html(data.length);
+        var columns = [
+            {
+                title: "번호",
+                field: "sms_hty_idx",
+                editor: false,
+                width: 70,
+            },
+            {
+                title: "발송 번호",
+                field: "sms_hty_sender",
+                editor: false,
+            },
+            {
+                title: "수신 번호",
+                field: "sms_hty_receiver",
+                editor: false,
+            },
+            {
+                title: "발송 메세지",
+                field: "sms_hty_message",
+                editor: false,
+            },
+            {
+                title: "발송 결과",
+                field: "sms_hty_result",
+                editor: false,
+                formatter: function (cell, formatterParams, onRendered) {
+                    const result = JSON.parse(cell.getValue());
+                    return result["returnCode"];
+                },
+            },
+            {
+                title: "발송 일시",
+                field: "sms_hty_reg_dt",
+                editor: false,
+            },
+        ];
+        setTable("example-table", columns, data);
+    });
+</script>

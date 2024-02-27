@@ -1,0 +1,122 @@
+<section id="contents">
+    <h1 class="cont-title">회원 정보</h1>
+    <div class="cont-wrap">
+        <form method="POST" id="frm-data" name="frm-data">
+            <div class="rhead01-wrap">
+                <div class="h2">기본 정보</div>
+                <table>
+                    <colgroup>
+                        <col class="w130" />
+                        <col />
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th scope="row">아이디</th>
+                            <td>
+                                <input
+                                    type="text"
+                                    name="mb_id"
+                                    required
+                                    class="unchangeable-data"
+                                />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">프로필 이미지</th>
+                            <td>
+                                <input type="text" name="mb_profile_img" />
+                                <img
+                                    style="display: block"
+                                    class="pre-view"
+                                    width="100"
+                                />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">비밀번호</th>
+                            <td>
+                                <input
+                                    type="password"
+                                    name="mb_passwd"
+                                    required
+                                />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">회원상태</th>
+                            <td>
+                                <label
+                                    ><input
+                                        type="radio"
+                                        name="mb_stt"
+                                        value="1"
+                                    />승인</label
+                                >
+                                <label
+                                    ><input
+                                        type="radio"
+                                        name="mb_stt"
+                                        value="2"
+                                    />차단</label
+                                >
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">회원명</th>
+                            <td>
+                                <input type="text" name="mb_name" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">전화 번호</th>
+                            <td>
+                                <input type="text" name="mb_cellphone" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">이메일</th>
+                            <td>
+                                <input type="text" name="mb_email" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">성별</th>
+                            <td>
+                                <label
+                                    ><input
+                                        type="radio"
+                                        name="mb_gender"
+                                        value="m"
+                                    />남성</label
+                                >
+                                <label
+                                    ><input
+                                        type="radio"
+                                        name="mb_gender"
+                                        value="f"
+                                    />여성</label
+                                >
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="confirm-wrap">
+                    <input
+                        type="submit"
+                        id="frm-submit"
+                        value="등록"
+                        class="btn-large btn-theme"
+                        accesskey="s"
+                    />
+                    <input
+                        type="button"
+                        value="닫기"
+                        class="btn-large btn-white"
+                        accesskey="s"
+                        onClick="window.close()"
+                    />
+                </div>
+            </div>
+        </form>
+    </div>
+</section>

@@ -1,0 +1,33 @@
+<div id="contents">
+    <style>
+        #login-wrap {
+            background-color: #fff;
+            position: absolute;
+            top: calc(50% - 150px);
+            left: calc(50% - 150px);
+            width: 300px;
+            height: 220px;
+            border-radius: 30px;
+        }
+        .login-input {
+            width: 100%;
+            height: 35px !important;
+            margin-top: 5px;
+        }
+    </style>
+
+    <div id="login-wrap">
+        <div class="mar20">
+            <div class="cont-title">관리자 (admin/123123)</div>
+            <form method="post" action="<?=_URL?>/auth/login">
+                <input type="text" name="adm_id" class="login-input" />
+                <input type="password" name="adm_passwd" class="login-input" />
+                <input
+                    type="submit"
+                    class="login-input btn-large btn-gray"
+                    value="로그인"
+                />
+            </form>
+        </div>
+    </div>
+</div>

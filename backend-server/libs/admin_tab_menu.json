@@ -1,0 +1,74 @@
+{
+    "디자인 관리": [
+        {
+            "title": "배너 관리",
+            "url": "/banner/list",
+            "visible": true
+        },
+        {
+            "title": "미디어 관리",
+            "url": "/media/list",
+            "visible": true
+        },
+        {
+            "title": "카테고리 목록",
+            "url": "/category/list",
+            "visible": true
+        }
+    ],
+
+    "프로모션 관리": [
+        {
+            "title": "이벤트 관리",
+            "url": "/event/list",
+            "visible": true
+        }
+    ],
+    "회원 관리": [
+        {
+            "title": "회원 목록",
+            "url": "/member/list",
+            "visible": true
+        },
+        {
+            "title": "가맹점 목록",
+            "url": "/partner/list",
+            "visible": true
+        }
+    ],
+    "매장 관리": [
+        {
+            "title": "매장 목록",
+            "url": "/store/list",
+            "visible": true
+        },
+        {
+            "title": "예약 목록",
+            "url": "/reservation/list",
+            "visible": true
+        },
+        {
+            "title": "후기 목록",
+            "url": "/review/list",
+            "visible": true
+        }
+    ],
+    "로그 및 설정": [
+        {
+            "title": "테스트",
+            "url": "/test/list",
+            "visible": true
+        },
+        {
+            "title": "문자 발송 기록",
+            "url": "/smshistory/list",
+            "visible": true
+        },
+        {
+            "title": "알림 발송 기록",
+            "url": "/notihistory/list",
+            "visible": true
+        }
+ 
+    ]
+}

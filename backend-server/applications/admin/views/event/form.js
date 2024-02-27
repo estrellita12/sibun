@@ -1,0 +1,3 @@
+$(function () {
+    setFormData("event", loadData);
+});

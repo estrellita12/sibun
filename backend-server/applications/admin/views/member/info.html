@@ -1,0 +1,64 @@
+<section id="contents">
+    <h1 class="cont_title">회원 정보</h1>
+    <div class="cont_wrap">
+        <form action="" method="GET" id="frmMember" name="frmMember">
+            <input type="hidden" name="id" value="<?=$this->row['mb_id']?>" />
+            <div class="rhead01_wrap">
+                <div class="h2">기본 정보</div>
+                <table>
+                    <colgroup>
+                        <col class="w130" />
+                        <col />
+                        <col class="w130" />
+                        <col />
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th scope="row">아이디</th>
+                            <td>
+                                <span class="marr10"
+                                    ><?=$this->row['mb_id']?></span
+                                ><img
+                                    src="<?=$this->row['mb_img']?>"
+                                    class="w30"
+                                />
+                            </td>
+                            <th scope="row">비밀번호</th>
+                            <td>
+                                <input type="text" name="passwd" value="" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">회원명</th>
+                            <td>
+                                <input
+                                    type="text"
+                                    name="name"
+                                    value="<?=$this->row['mb_name']?>"
+                                    required
+                                    itemname="회원명"
+                                    class="required"
+                                />
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="confirm_wrap">
+                    <input
+                        type="submit"
+                        value="수정"
+                        class="btn_medium btn_theme"
+                        accesskey="s"
+                    />
+                    <button
+                        type="button"
+                        class="btn_medium btn_white"
+                        onclick="window.close();"
+                    >
+                        닫기
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>

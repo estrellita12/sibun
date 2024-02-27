@@ -1,0 +1,100 @@
+<section id="contents">
+    <h1 class="cont-title">후기 목록</h1>
+    <div class="cont-wrap">
+        <form action="" method="GET" id="frm-search" name="frm-search">
+            <div class="search-wrap">
+                <table>
+                    <colgroup>
+                        <col class="w140" />
+                        <col />
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th scope="row">
+                                <span class="tooltip"
+                                    >검색어<span class="tooltiptext"
+                                        >검색어 입력시 포함 검색, (쉼표)를
+                                        입력시 구분검색</span
+                                    >
+                                </span>
+                            </th>
+                            <td>
+                                <select name="srch" id="srch" class="w130">
+                                    <option value="review_by_store_idx">
+                                        매장 번호
+                                    </option>
+                                    <option value="review_rating">별점</option>
+                                </select>
+                                <input
+                                    type="text"
+                                    name="kwd"
+                                    id="kwd"
+                                    size="30"
+                                />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">기간검색</th>
+                            <td>
+                                <div>
+                                    <select name="term" class="w130" id="term">
+                                        <option value="review_reg_dt">
+                                            등록 일자
+                                        </option>
+                                    </select>
+                                    <input
+                                        type="date"
+                                        name="beg"
+                                        id="beg"
+                                        size="6"
+                                    />
+                                    <input
+                                        type="date"
+                                        name="end"
+                                        id="end"
+                                        size="6"
+                                    />
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="confirm-wrap">
+                    <input
+                        type="submit"
+                        value="검색"
+                        id="fsearch"
+                        class="btn-medium btn-theme"
+                    />
+                    <input
+                        type="reset"
+                        value="초기화"
+                        id="freset"
+                        class="btn-medium btn-white"
+                    />
+                </div>
+            </div>
+        </form>
+        <form action="#" method="post">
+            <div class="list-wrap">
+                <div class="rect-wrap">
+                    <span class="cnt-wrap">
+                        검색된 후기 :
+                        <b class="cnt" id="cnt"></b> 개
+                    </span>
+                    <span class="right-wrap">
+                        <button
+                            type="button"
+                            class="btn-excel"
+                            id="excel-download"
+                        >
+                            엑셀저장
+                        </button>
+                    </span>
+                </div>
+                <div class="btn-wrap"></div>
+                <div id="review-list"></div>
+            </div>
+        </form>
+    </div>
+</section>

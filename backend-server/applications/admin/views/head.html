@@ -1,0 +1,85 @@
+<head>
+    <title>관리자 사이트</title>
+    <meta
+        name="viewport"
+        content="width=device-width,initial-scale=1,shrink-to-fit=no,user-scalable=no,viewport-fit=cover"
+    />
+    <link rel="stylesheet" type="text/css" href="/public/css/admin.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <link
+        href="https://unpkg.com/tabulator-tables@5.5.0/dist/css/tabulator.min.css"
+        rel="stylesheet"
+    />
+    <script
+        type="text/javascript"
+        src="https://unpkg.com/tabulator-tables@5.5.0/dist/js/tabulator.min.js"
+    ></script>
+    <script
+        type="text/javascript"
+        src="https://oss.sheetjs.com/sheetjs/xlsx.full.min.js"
+    ></script>
+    <script src="/public/js/admin.js"></script>
+    <script>
+        <?php
+            $path = $this->contents . ".js";
+            if (file_exists($path)) {
+                require_once $path;
+            }
+        ?>
+    </script>
+    <script>
+        const url = "<?=_URL?>";
+    </script>
+    <script>
+        $(function(){
+            const request = <?=json_encode($_GET)?>;
+            loadRequest(request);
+        })
+    </script>
+    <style>
+        .tabulator {
+            border-color: #eee !important;
+        }
+        .tabulator .tabulator-header {
+            font-weight: 500 !important;
+            border-bottom-color: #eee !important;
+        }
+        .tabulator .tabulator-header .tabulator-col {
+            background: #ffffff !important;
+            border-right-color: #eee !important;
+        }
+        .tabulator .tabulator-row .tabulator-cell {
+            border-right-color: #eee !important;
+        }
+        .tabulator .tabulator-footer {
+            background-color: #fefefe;
+            border-top-color: #eee !important;
+            font-weight: 500 !important;
+        }
+        .tabulator-row.tabulator-row-even {
+            background-color: #fafafa;
+        }
+        .tabulator-row.tabulator-selectable:hover {
+            background-color: #ebebeb;
+        }
+        .tabulator .tabulator-footer .tabulator-page.active {
+            color: <?=_COLOR?>;
+        }
+        .tabulator .tabulator-footer .tabulator-page {
+            border-color: #fff;
+        }
+    </style>
+
+    <!--
+    <link rel="stylesheet" type="text/css" href="/public/css/select2.min.css" />
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+    <script src="/public/js/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+    <script src="/public/js/colResizable-1.6.js"></script>
+    <script src="/public/js/multi-select.js"></script>
+    <script src="/public/js/common.js"></script>
+    <script src="/public/js/script.js"></script>
+    <script src="/public/js/dragtable.js"></script>
+    <script src="/public/js/select2.min.js"></script>
+    -->
+</head>

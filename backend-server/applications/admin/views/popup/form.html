@@ -1,0 +1,99 @@
+<section id="contents">
+    <h1 class="cont-title">팝업 정보</h1>
+    <div class="cont-wrap">
+        <form
+            action="<?=_URL?>/popup/add"
+            method="POST"
+            id="frm-data"
+            name="frm-data"
+        >
+            <div class="rhead01-wrap">
+                <div class="h2">기본 정보</div>
+                <table>
+                    <colgroup>
+                        <col class="w130" />
+                        <col />
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th scope="row">제목</th>
+                            <td>
+                                <input
+                                    type="text"
+                                    name="popup_title"
+                                    required
+                                    size="100"
+                                />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">대표 이미지</th>
+                            <td>
+                                <input
+                                    type="text"
+                                    name="popup_img_src"
+                                    size="100"
+                                />
+                                <img class="mart5 pre-view" width="300" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">내용</th>
+                            <td>
+                                <textarea name="popup_content"></textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">시작일시</th>
+                            <td>
+                                <input type="date" name="popup_beg_date" />
+                                <input type="time" name="popup_beg_time" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">종료일시</th>
+                            <td>
+                                <input type="date" name="popup_end_date" />
+                                <input type="time" name="popup_end_time" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">노출 여부</th>
+                            <td>
+                                <select name="popup_use_yn">
+                                    <option value="y">노출</option>
+                                    <option value="n">비노출</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="confirm-wrap">
+                    <input
+                        type="submit"
+                        id="frm-submit"
+                        value="등록"
+                        class="btn-large btn-theme"
+                        accesskey="s"
+                    />
+                    <input
+                        type="button"
+                        value="닫기"
+                        class="btn-large btn-white"
+                        accesskey="s"
+                        onClick="window.close()"
+                    />
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+<script>
+    $(function () {
+        <?php if(!empty($this->params['ident'])){ ?>
+        $("#frm-data").attr("action","<?=_URL?>/popup/set/<?=$this->params['ident']?>");
+        $("#frm-submit").val("수정");
+        loadData(<?=json_encode($this->row)?>);
+        <?php } ?>
+    });
+</script>

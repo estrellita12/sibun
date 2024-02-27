@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <?php require_once _APPLICATIONS . "/views/head.html"; ?>
+    <body>
+        <div id="container">
+            <header id="hd">
+                <div id="hd_wrap">
+                    <div id="logo">
+                        <a href="http://partner.customdx.kr/Main"
+                            >MCP PARTNER</a
+                        >
+                    </div>
+                    <div id="tnb">
+                        <ul>
+                            <li><a href="<?=_URL?>/main">홈</a></li>
+                            <li id="tnb_logout">
+                                <a href="<?=_URL?>/login/logout">로그아웃</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </header>
+            <?php
+$path =
+    _APPLICATIONS . "/views/{$this->params["controller"]}/{$this->page}.html";
+            if (file_exists($path)) { require_once $path; } ?>
+        </div>
+        <?php require_once _APPLICATIONS . "/views/footer.html"; ?>
+    </body>
+</html>

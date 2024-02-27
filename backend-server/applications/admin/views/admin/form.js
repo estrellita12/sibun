@@ -1,0 +1,3 @@
+$(function () {
+    setFormData("member", loadData);
+});

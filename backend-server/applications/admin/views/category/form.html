@@ -1,0 +1,89 @@
+<section id="contents">
+    <h1 class="cont-title">카테고리 정보</h1>
+    <div class="cont-wrap">
+        <form method="POST" id="frm-data" name="frm-data">
+            <div class="rhead01-wrap">
+                <div class="h2">기본 정보</div>
+                <table>
+                    <colgroup>
+                        <col class="w130" />
+                        <col />
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th scope="row">고유번호</th>
+                            <td>
+                                <input type="text" name="ctg_idx" disabled />
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th scope="row">제목</th>
+                            <td>
+                                <input type="text" name="ctg_title" required />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">아이콘</th>
+                            <td>
+                                <input type="text" name="ctg_icon_img" />
+                                <img
+                                    class="mart5 pre-view"
+                                    style="display: block"
+                                    width="100"
+                                />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">색상</th>
+                            <td>
+                                <input type="color" name="ctg_color_hex" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">노출 여부</th>
+                            <td>
+                                <select name="ctg_use_yn">
+                                    <option value="y">노출</option>
+                                    <option value="n">비노출</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">등록일시</th>
+                            <td>
+                                <input type="text" name="ctg_reg_dt" disabled />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">수정일시</th>
+                            <td>
+                                <input
+                                    type="text"
+                                    name="ctg_update_dt"
+                                    disabled
+                                />
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="confirm-wrap">
+                    <input
+                        type="submit"
+                        id="frm-submit"
+                        value="등록"
+                        class="btn-large btn-theme"
+                        accesskey="s"
+                    />
+                    <input
+                        type="button"
+                        value="닫기"
+                        class="btn-large btn-white"
+                        accesskey="s"
+                        onClick="window.close()"
+                    />
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
